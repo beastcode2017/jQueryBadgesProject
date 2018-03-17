@@ -13,11 +13,5 @@ $.ajax({
       $('.course').append('<img/>').attr('src','course.badge');
       $('.course').append("<a href='course.url' target='_blank'></a>").addClass("btn btn-primary").text("See Course");
     });
-
-
-  },
-
-
   }
-})
 });
