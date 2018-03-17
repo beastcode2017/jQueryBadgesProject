@@ -8,11 +8,9 @@ $.ajax({
     response.courses.completed.forEach(function(course){
       var msg = $('<div></div>');
       msg.addClass('course');
-      $('#badges').append(msg);
-      var placard = $('.course:last');
-      placard.append('<h3></h3>').text(course.title);
-      $('.course:last').append('<img/>').attr('src','course.badge');
-      $('.course:last').append("<a href='course.url' target='_blank'></a>").addClass("btn btn-primary").text("See Course");
+      $('#badges').append(msg).append('<h3></h3>').text(course.title);
+      $('.course h3:last').after('<img/>').attr('src','course.badge');
+      $('.course h3 img:last').after("<a href='course.url' target='_blank'></a>").addClass("btn btn-primary").text("See Course");
     });
   }
 });
