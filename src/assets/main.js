@@ -6,7 +6,9 @@ $.ajax({
   dataType:'jsonp',
   success: function(response){
     response.courses.completed.forEach(function(course){
-      $('#badges').append("<div class='course'></div>").append('<h3></h3>').text(course.title);
+      var title = course.title;
+      $('#badges').append("<div class='course'></div>");
+      $('.course').prepend('<h3></h3>').text(title);
       $('.course h3:last').after('<img/>').attr('src','course.badge');
       $('.course h3 img:last').after("<a href='course.url' target='_blank'></a>").addClass("btn btn-primary").text("See Course");
     });
