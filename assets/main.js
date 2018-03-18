@@ -13,9 +13,6 @@ $.ajax({
       $('.course h3 img:last').after("<a href="+"'"+course.url+"'"+">See Course</a>").addClass("btn btn-primary");
       $('.course h3 img a:last').attr('target','_blank');
     });
-
-    });
   }
 });
-
-});
+})()
