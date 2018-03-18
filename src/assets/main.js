@@ -11,8 +11,6 @@ $.ajax({
       $('.course h3:last').append(course.title);
       $('.course h3:last').after("<img src="+"'"+course.badge+"'"+"/>");
       $('.course h3 img:last').after('<a></a>');
-      $('.course h3 img a:last').addClass("btn btn-primary");
-      $('.course h3 img a:last').attr('target','_blank');
     });
   }
 });
