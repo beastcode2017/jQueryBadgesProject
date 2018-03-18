@@ -10,7 +10,7 @@ $.ajax({
       $('.course:last').append('<h3></h3>');
       $('.course h3:last').append(response.courses.completed[i].title);
       $('.course h3:last').after("<img src="+"'"+response.courses.completed[i].badge+"'"+"/>");
-      $('.course h3 img:last').add("a");
+      $('a').appendTo($('.course h3 img:last'));
     }
   }
 });
