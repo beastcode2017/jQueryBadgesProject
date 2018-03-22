@@ -27,4 +27,4 @@ function addCourses(courses){
     }).appendTo($course);
   })
 }
-});
+})();
