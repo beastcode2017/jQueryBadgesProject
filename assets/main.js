@@ -14,24 +14,24 @@ function addCourses(courses){
 
   courses.forEach(function(course){
 
-    var $course = $('<div />'), {
+    var $course = $('<div />', {
       'class':'course'
     }).appendTo($badges);
 
-    $('<h3 />'), {
+    $('<h3 />', {
       text:course.title
     }).appendTo($course);
 
-    $('<img />'), {
+    $('<img />', {
       src:course.badge
     }).appendTo($course);
 
-    $('<a />'), {
+    $('<a />', {
       'class':'btn btn-primary',
       target:'blank',
       href:course.url,
       text:'See Course'
     }).appendTo($course);
-  });
+  })
 }
-})();
+});
