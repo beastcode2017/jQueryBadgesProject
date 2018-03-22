@@ -32,6 +32,6 @@ function addCourses(courses){
       href:course.url,
       text:'See Course'
     }).appendTo($course);
-  })
+  });
 }
 });
