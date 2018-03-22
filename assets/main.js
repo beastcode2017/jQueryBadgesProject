@@ -5,18 +5,26 @@ $.ajax({
   url: 'https://www.codeschool.com/users/Kingbreaker.json',
   dataType:'jsonp',
   success: function(response){
-    response.courses.completed.forEach(function(course){
-      $('#badges').append("<div class='course'></div>");
-      $('.course:last').append('<h3></h3>');
-      $('.course h3:last').append(course.title);
-      $('.course h3:last').after("<img src="+"'"+course.badge+"'"+"/>");
-      $('<a />', {
-        'class': 'btn btn-primary',
-        target:'_blank',
-        href: course.url,
-        text: 'See Course'
-      }).appendTo('.course:last');
-    });
-  }
+    addCourses(response.courses.completed);
+  });
+function addCourses(courses){
+  var $badges = $('#badges');
+  courses.forEach(function(course){
+    var $course = $('<div />'), {
+      'class':'course'
+    }).appendTo($badges);
+    $('<h3 />'), {
+      text:course.title
+    }).appendTo($course);
+    $('<img />'), {
+      src:course.badge
+    }).appendTo($course);
+    $('<a />'), {
+      'class':'btn btn-primary',
+      target:'blank',
+      href:course.url,
+      text:'See Course'
+    }).appendTo($course);
+  })
+}
 });
-})();
